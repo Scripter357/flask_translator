@@ -2,13 +2,16 @@ from flask import Flask, render_template, request
 import requests
 import sys
 
+keyFile = open("API.key", 'r')
+key = keyFile.readline().rstrip()
+
 url = "https://google-translate1.p.rapidapi.com/language/translate/v2"
 
 headers = {
     'content-type': "application/x-www-form-urlencoded",
     'accept-encoding': "application/gzip",
     'x-rapidapi-host': "google-translate1.p.rapidapi.com",
-    'x-rapidapi-key': ""
+    'x-rapidapi-key': key
     }
 
 
